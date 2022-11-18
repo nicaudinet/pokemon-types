@@ -85,7 +85,7 @@ def neighborhood(grid, point):
 def fight(p_type, neighbors):
     bo = {'type':p_type, 'eff':I, 'num':0} # best opponent
     effs = TYPE_CHART[p_type] # effects
-    for opponent in TYPES:
+    for opponent in np.unique(TYPES):
         num = len([x for x in neighbors if x == opponent])
         eff = effs[opponent]
         if num >= eff:
